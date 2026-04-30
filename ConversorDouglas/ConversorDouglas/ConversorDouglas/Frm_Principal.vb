@@ -7,7 +7,7 @@
     Private Function FormatoTipoAudio(ByVal formato As String) As Boolean
         Dim audio As Boolean = False
         Select Case formato
-            Case "mp3"
+            Case "mp3", "wav"
                 audio = True
             Case Else
                 audio = False
@@ -18,11 +18,13 @@
     Private Function Converter(ByVal arquivo_caminho_completo As String, ByVal arquivo_nome As String) As Boolean
         Dim ok As Boolean = False
         If Not System.IO.File.Exists(txt_ffmpeg_local.Text & "\ffmpeg.exe") Then
+            Cursor = Cursors.Default
             MsgBox("O executável do FFmpeg não foi encontrado no local informado.", vbOKOnly + vbInformation, "Atenção")
             txt_ffmpeg_local.Focus()
         Else
             If FormatoTipoAudio(cbo_formato_saida.Text) Then
                 If Not System.IO.File.Exists(txt_arquivo_imagem.Text) Then
+                    Cursor = Cursors.Default
                     MsgBox("Imagem não encontrada.", vbOKOnly + vbInformation, "Atenção")
                     txt_arquivo_imagem.Focus()
                     ok = False
@@ -181,6 +183,7 @@
             txt_pasta_destino.Text += "\"
         End If
         If dg_arquivos.RowCount > 0 Then
+            Cursor = Cursors.WaitCursor
             HDbotoes(False)
             pbar.Maximum = dg_arquivos.RowCount
             pbar.Step = 1
@@ -193,6 +196,7 @@
                 i += 1
                 Application.DoEvents()
             Next
+            Cursor = Cursors.Default
             MsgBox("Os arquivos foram convertidos com sucesso.", vbOKOnly + vbInformation, "Concluído")
             HDbotoes(True)
             pbar.Value = 0
@@ -201,6 +205,7 @@
             ts_botoes_arquivos.Focus()
             cmd_carregar_arquivos.Select()
         End If
+        Cursor = Cursors.Default
     End Sub
 
     Private Sub cmd_converter_selecionado_Click(sender As Object, e As EventArgs) Handles cmd_converter_selecionado.Click
@@ -312,4 +317,39 @@
             End If
         End With
     End Sub
+
+    Private Sub dg_arquivos_RowsAdded(sender As Object, e As DataGridViewRowsAddedEventArgs) Handles dg_arquivos.RowsAdded
+        HDBotoes()
+    End Sub
+
+    Private Sub dg_arquivos_RowsRemoved(sender As Object, e As DataGridViewRowsRemovedEventArgs) Handles dg_arquivos.RowsRemoved
+        HDBotoes()
+    End Sub
+
+    Private Sub HDBotoes()
+        If dg_arquivos.RowCount > 0 Then
+            cmd_converter.Enabled = True
+            cmd_converter_selecionado.Enabled = True
+        Else
+            cmd_converter.Enabled = False
+            cmd_converter_selecionado.Enabled = False
+        End If
+    End Sub
+
+    Private Sub Frm_Principal_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        HDBotoes()
+    End Sub
+
+    Private Sub cmd_limpar_lista_Click(sender As Object, e As EventArgs) Handles cmd_limpar_lista.Click
+        If dg_arquivos.RowCount > 0 Then
+            If MsgBox("Deseja realmente limpar a lista de arquivos a serem convertidos?", vbYesNo + vbQuestion, "Atenção") = vbYes Then
+                dg_arquivos.Rows.Clear()
+            End If
+        Else
+            MsgBox("Nenhum arquivo listado.", vbOKOnly + vbInformation, "Atenção")
+        End If
+        ts_botoes_arquivos.Focus()
+        cmd_carregar_arquivos.Select()
+    End Sub
+
 End Class

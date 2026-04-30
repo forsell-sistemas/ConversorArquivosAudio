@@ -22,6 +22,7 @@ Partial Class Frm_Principal
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_Principal))
         Me.ts_botoes_topo = New System.Windows.Forms.ToolStrip()
         Me.cmd_converter = New System.Windows.Forms.ToolStripSplitButton()
@@ -51,6 +52,9 @@ Partial Class Frm_Principal
         Me.c_arquivo_caminho = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.c_arquivo_nome = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pbar = New System.Windows.Forms.ProgressBar()
+        Me.cmd_limpar_lista = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.ts_botoes_topo.SuspendLayout()
         Me.grpbox_topo.SuspendLayout()
         Me.ts_botoes_arquivos.SuspendLayout()
@@ -134,10 +138,11 @@ Partial Class Frm_Principal
         Me.cbo_formato_origem.Name = "cbo_formato_origem"
         Me.cbo_formato_origem.Size = New System.Drawing.Size(63, 21)
         Me.cbo_formato_origem.TabIndex = 16
+        Me.ToolTip1.SetToolTip(Me.cbo_formato_origem, "Formato dos arquivos de origem")
         '
         'cmd_abrir_pasta_arquivos_originais
         '
-        Me.cmd_abrir_pasta_arquivos_originais.Location = New System.Drawing.Point(761, 29)
+        Me.cmd_abrir_pasta_arquivos_originais.Location = New System.Drawing.Point(761, 31)
         Me.cmd_abrir_pasta_arquivos_originais.Name = "cmd_abrir_pasta_arquivos_originais"
         Me.cmd_abrir_pasta_arquivos_originais.Size = New System.Drawing.Size(48, 23)
         Me.cmd_abrir_pasta_arquivos_originais.TabIndex = 15
@@ -146,7 +151,7 @@ Partial Class Frm_Principal
         '
         'cmd_abrir_pasta_destino
         '
-        Me.cmd_abrir_pasta_destino.Location = New System.Drawing.Point(761, 69)
+        Me.cmd_abrir_pasta_destino.Location = New System.Drawing.Point(761, 72)
         Me.cmd_abrir_pasta_destino.Name = "cmd_abrir_pasta_destino"
         Me.cmd_abrir_pasta_destino.Size = New System.Drawing.Size(48, 23)
         Me.cmd_abrir_pasta_destino.TabIndex = 14
@@ -155,7 +160,7 @@ Partial Class Frm_Principal
         '
         'cmd_baixar_ffmpeg
         '
-        Me.cmd_baixar_ffmpeg.Location = New System.Drawing.Point(386, 30)
+        Me.cmd_baixar_ffmpeg.Location = New System.Drawing.Point(386, 31)
         Me.cmd_baixar_ffmpeg.Name = "cmd_baixar_ffmpeg"
         Me.cmd_baixar_ffmpeg.Size = New System.Drawing.Size(48, 23)
         Me.cmd_baixar_ffmpeg.TabIndex = 13
@@ -166,19 +171,21 @@ Partial Class Frm_Principal
         '
         Me.cbo_formato_saida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_formato_saida.FormattingEnabled = True
-        Me.cbo_formato_saida.Location = New System.Drawing.Point(815, 71)
+        Me.cbo_formato_saida.Location = New System.Drawing.Point(815, 73)
         Me.cbo_formato_saida.Name = "cbo_formato_saida"
         Me.cbo_formato_saida.Size = New System.Drawing.Size(63, 21)
         Me.cbo_formato_saida.TabIndex = 12
+        Me.ToolTip1.SetToolTip(Me.cbo_formato_saida, "Formato dos arquivos resultantes da conversão")
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(812, 55)
+        Me.Label6.Location = New System.Drawing.Point(812, 58)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(45, 13)
         Me.Label6.TabIndex = 10
         Me.Label6.Text = "Formato"
+        Me.ToolTip1.SetToolTip(Me.Label6, "Formato dos arquivos resultantes da conversão")
         '
         'Label5
         '
@@ -188,10 +195,11 @@ Partial Class Frm_Principal
         Me.Label5.Size = New System.Drawing.Size(45, 13)
         Me.Label5.TabIndex = 8
         Me.Label5.Text = "Formato"
+        Me.ToolTip1.SetToolTip(Me.Label5, "Formato dos arquivos de origem")
         '
         'txt_pasta_destino
         '
-        Me.txt_pasta_destino.Location = New System.Drawing.Point(443, 71)
+        Me.txt_pasta_destino.Location = New System.Drawing.Point(443, 73)
         Me.txt_pasta_destino.Name = "txt_pasta_destino"
         Me.txt_pasta_destino.Size = New System.Drawing.Size(312, 20)
         Me.txt_pasta_destino.TabIndex = 7
@@ -200,7 +208,7 @@ Partial Class Frm_Principal
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(440, 55)
+        Me.Label3.Location = New System.Drawing.Point(440, 58)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(79, 13)
         Me.Label3.TabIndex = 6
@@ -225,7 +233,7 @@ Partial Class Frm_Principal
         '
         'txt_arquivo_imagem
         '
-        Me.txt_arquivo_imagem.Location = New System.Drawing.Point(15, 71)
+        Me.txt_arquivo_imagem.Location = New System.Drawing.Point(15, 73)
         Me.txt_arquivo_imagem.Name = "txt_arquivo_imagem"
         Me.txt_arquivo_imagem.Size = New System.Drawing.Size(419, 20)
         Me.txt_arquivo_imagem.TabIndex = 3
@@ -234,7 +242,7 @@ Partial Class Frm_Principal
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 55)
+        Me.Label2.Location = New System.Drawing.Point(12, 58)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(114, 13)
         Me.Label2.TabIndex = 2
@@ -259,7 +267,7 @@ Partial Class Frm_Principal
         '
         'ts_botoes_arquivos
         '
-        Me.ts_botoes_arquivos.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.cmd_carregar_arquivos})
+        Me.ts_botoes_arquivos.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.cmd_carregar_arquivos, Me.ToolStripSeparator2, Me.cmd_limpar_lista})
         Me.ts_botoes_arquivos.Location = New System.Drawing.Point(0, 153)
         Me.ts_botoes_arquivos.Name = "ts_botoes_arquivos"
         Me.ts_botoes_arquivos.Size = New System.Drawing.Size(978, 25)
@@ -315,6 +323,19 @@ Partial Class Frm_Principal
         Me.pbar.Size = New System.Drawing.Size(978, 23)
         Me.pbar.TabIndex = 4
         '
+        'cmd_limpar_lista
+        '
+        Me.cmd_limpar_lista.Image = CType(resources.GetObject("cmd_limpar_lista.Image"), System.Drawing.Image)
+        Me.cmd_limpar_lista.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.cmd_limpar_lista.Name = "cmd_limpar_lista"
+        Me.cmd_limpar_lista.Size = New System.Drawing.Size(100, 22)
+        Me.cmd_limpar_lista.Text = "Limpar a Lista"
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 25)
+        '
         'Frm_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -368,4 +389,7 @@ Partial Class Frm_Principal
     Friend WithEvents cmd_abrir_pasta_destino As Button
     Friend WithEvents cmd_abrir_pasta_arquivos_originais As Button
     Friend WithEvents cbo_formato_origem As ComboBox
+    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
+    Friend WithEvents cmd_limpar_lista As ToolStripButton
+    Friend WithEvents ToolTip1 As ToolTip
 End Class
