@@ -1,0 +1,12 @@
+C:\Douglas\ffmpeg\ConversorDouglas\ConversorDouglas\ConversorDouglas\bin\Debug\ConversorDouglas.exe.config
+C:\Douglas\ffmpeg\ConversorDouglas\ConversorDouglas\ConversorDouglas\bin\Debug\ConversorDouglas.exe
+C:\Douglas\ffmpeg\ConversorDouglas\ConversorDouglas\ConversorDouglas\bin\Debug\ConversorDouglas.pdb
+C:\Douglas\ffmpeg\ConversorDouglas\ConversorDouglas\ConversorDouglas\bin\Debug\ConversorDouglas.xml
+C:\Douglas\ffmpeg\ConversorDouglas\ConversorDouglas\ConversorDouglas\obj\Debug\ConversorDouglas.vbprojAssemblyReference.cache
+C:\Douglas\ffmpeg\ConversorDouglas\ConversorDouglas\ConversorDouglas\obj\Debug\ConversorDouglas.Frm_Principal.resources
+C:\Douglas\ffmpeg\ConversorDouglas\ConversorDouglas\ConversorDouglas\obj\Debug\ConversorDouglas.Resources.resources
+C:\Douglas\ffmpeg\ConversorDouglas\ConversorDouglas\ConversorDouglas\obj\Debug\ConversorDouglas.vbproj.GenerateResource.cache
+C:\Douglas\ffmpeg\ConversorDouglas\ConversorDouglas\ConversorDouglas\obj\Debug\ConversorDouglas.vbproj.CoreCompileInputs.cache
+C:\Douglas\ffmpeg\ConversorDouglas\ConversorDouglas\ConversorDouglas\obj\Debug\ConversorDouglas.exe
+C:\Douglas\ffmpeg\ConversorDouglas\ConversorDouglas\ConversorDouglas\obj\Debug\ConversorDouglas.xml
+C:\Douglas\ffmpeg\ConversorDouglas\ConversorDouglas\ConversorDouglas\obj\Debug\ConversorDouglas.pdb

@@ -1,0 +1,3 @@
+C:\Douglas\ffmpeg\bin
+
+ffmpeg -y -i C:\Douglas\Banda\Separados\Outro\tapetees.png -i C:\Douglas\Banda\Separados\a_\_1.mp3 -c:a copy C:\Douglas\Banda\Videos\out.avi
