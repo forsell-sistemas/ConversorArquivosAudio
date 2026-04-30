@@ -327,7 +327,7 @@ Partial Class Frm_Principal
         Me.Controls.Add(Me.ts_botoes_topo)
         Me.Name = "Frm_Principal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Conversor de audio para video"
+        Me.Text = "Conversor de Áudio"
         Me.ts_botoes_topo.ResumeLayout(False)
         Me.ts_botoes_topo.PerformLayout()
         Me.grpbox_topo.ResumeLayout(False)
